@@ -1,0 +1,16 @@
+footer{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   box-shadow: 0 0 5px black;
+   background-color: #fff;
+}
+
+#last{
+   text-align: center;
+   font-size: large;
+   font-weight: 700;
+   height: 26px;
+   line-height: 26px;
+      background-color: #fff;
+}

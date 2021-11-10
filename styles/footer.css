@@ -1,16 +1,92 @@
 footer{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   box-shadow: 0 0 5px black;
-   background-color: #fff;
+   box-shadow: 0 0 5px var(--blaxkForBoxShadow);
+   background-color:  var(--white);
+   font-size: larger;
+   margin-top: 60px;
 }
 
+footer *{
+   overflow: hidden;
+}
+
+footer #footerInfoWrapper{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding: 10px;
+   margin-top: 8px;
+   margin-bottom: 8px;
+}
+
+footer #footerInfoWrapper div {
+   background-color: var(--lilla);
+   padding: 8px;
+   border-radius: 12px;
+}
 #last{
    text-align: center;
-   font-size: large;
-   font-weight: 700;
+   font-size: small;
    height: 26px;
    line-height: 26px;
-      background-color: #fff;
+      background-color: var(--white);
+}
+
+footer #socialMediaIconsWrapper{
+text-align: center;
+}
+
+footer address a{
+padding: 4px;
+margin-top: 14px;
+margin-bottom: 14px;
+border-radius: 8px;
+font-size: large;
+text-decoration: none;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+    color: var(--white);
+}
+
+.fa:hover {
+    opacity: 0.7;
+    box-shadow: 0 0 12px var(--blaxkForBoxShadow);
+}
+
+.fa-facebook {
+  background: #3B5998;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+}
+
+.fa-google {
+  background: #dd4b39;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+}
+
+.fa-instagram {
+  background: #125688;
+}
+
+
+.fa-reddit {
+  background: #ff5700;
+}
+
+#socialMediaIconsWrapper a:focus{
+       opacity: 0.7;
+    box-shadow: 0 0 12px var(--blaxkForBoxShadow);
 }

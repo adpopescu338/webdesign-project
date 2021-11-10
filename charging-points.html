@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EV</title>
+		<link rel="stylesheet" href="styles/main.css" />
+		<style>
+			/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+			main * {
+				overflow: visible;
+			}
+			#map {
+				height: 500px;
+				margin-top: 25px;
+				margin-bottom: 25px;
+				border-radius: 4px;
+				border: 1px solid var( --greyLight);
+				box-shadow: 0 0 5px var(--blaxkForBoxShadow);
+            max-width: 100%;
+			}
+
+			main article h4 {
+				display: inline-block;
+				margin-top: 7px;
+			}
+
+			main article address {
+				display: inline;
+			}
+
+			main li {
+				border-bottom: 1px solid var( --greyLight);
+			}
+
+			main article a {
+				padding: 6px;
+			}
+
+			main ul {
+				padding-right: 7px;
+				margin-bottom: 35px;
+			}
+		</style>
+	</head>
+	<body>
+		<main aria-labelledby="title">
+			<h1 id="title">EV charging point in central London</h1>
+
+			<h2 id="mapTitle">EV charging points map</h2>
+			<div id="map" aria-labelledby="mapTitle"></div>
+
+			<h2 id="listTitle">List of charging points</h2>
+			<section aria-labelledby="listTitle"></section>
+		</main>
+	</body>
+	<script type="module" src="main.js"></script>
+	<script type="module">
+		import { appendCreditForCars } from './main.js';
+
+		window.addEventListener('load', initMap);
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: { lat: 51.5078709, lng: -0.1248353 },
+				zoom: 14,
+			});
+
+			fetch('markers.json')
+				.then((r) => r.json())
+				.then((r) => appendmarkers(r))
+				.catch((e) => console.error(e));
+
+			function appendmarkers(r) {
+				r.forEach(({lat, lon}) => {
+					const marker = new google.maps.Marker({
+						position: { lat, lng: lon },
+						map,
+						title: 'EV charging point',
+					});
+                 marker.addListener("click", ()=>window.open('https://maps.google.com/'))
+				});
+			}
+		}
+
+		!(function loadListOfChargingPoints() {
+			//to keep the global context clean
+			const providerSites = {};
+			providerSites['ZeroNet'] = 'https://zerocarbonworld.org/zero-net';
+			providerSites['ubitricity'] = 'https://www.ubitricity.com/';
+			providerSites['bp pulse'] = 'https://www.bppulse.co.uk/';
+			providerSites['Source London'] = 'https://www.sourcelondon.net/';
+			providerSites['Charge Your Car'] = 'https://www.chargeyourcar.org.uk/';
+			providerSites['ESB Energy'] = 'https://www.esbenergy.co.uk/';
+			providerSites['Other'] = 'https://new.siemens.com/';
+			providerSites['Pod Point'] = 'https://pod-point.com/';
+			fetch('charging-points.json')
+				.then((r) => r.json())
+				.then((r) => makeList(r));
+
+			function makeList(chargingPoints) {
+				const ul = document.createElement('ul');
+
+				chargingPoints.forEach(({ place, address, name }, index) => {
+					ul.innerHTML += `
+		               <li>
+		                  <article>
+		                     <h3>${place}<h3>
+		                        <h4 id='addressLabel${index}'>Address: &nbsp</h4>
+		                        <a target='_blank' href='https://www.google.com/maps/place/${address}'>
+		                        <address aria-labelledby='addressLabel${index}'>${address}</address>
+		                        </a>
+		                        <br>
+
+		                        <h4 id='providerLabel${index}'>Provider: &nbsp</h4>
+		                         <a aria-labelledby='providerLabel${index}' target='_blank' href='${
+						providerSites[name.trim()]
+					}'>
+		                              ${name}
+		                              </a>
+		                     </article>
+		                  </li>
+		               `;
+				});
+
+				document.querySelector('main section').appendChild(ul);
+
+				appendCreditForCars('Data from', 'https://www.zap-map.com/location-search/london-charging-points/');
+			}
+		})();
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqYhMUtK2WZ5BE6L0aLNmgjI2qE3PDJXI" async defer></script>
+</html>

@@ -1,0 +1,93 @@
+[
+	{ "place": " Q-Park Trafalgar ", "address": " Spring Gardens, Whitehall, Greater London, SW1A 2TS ", "name": " bp pulse " },
+
+	{
+		"place": " Whitehall Place ",
+		"address": " 10 Whitehall Place, Whitehall, Greater London, SW1A 2BD ",
+		"name": " Pod Point "
+	},
+
+	{
+		"place": " Q-Park Leicester Square ",
+		"address": " Whitcomb Street, Leicester Square, Greater London, WC2H 7DT ",
+		"name": " bp pulse "
+	},
+
+	{
+		"place": " Saint Martins Lane Hotel ",
+		"address": " 45 Saint Martin's Lane, Charing Cross, Greater London, WC2N 4HX ",
+		"name": " bp pulse "
+	},
+
+	{
+		"place": " St. James' Square ",
+		"address": " 1 St. James' Square, St. James's, Greater London, SW1Y 4PD ",
+		"name": " bp pulse "
+	},
+
+	{
+		"place": " 5 Upper St Martin's Lane ",
+		"address": " 5 Upper St Martin's Lane, Leicester Square, Greater London, WC2H 9NY ",
+		"name": " ubitricity "
+	},
+
+	{
+		"place": " Southampton Street ",
+		"address": " Southampton Street, Covent Garden, Greater London, WC2E 7HA ",
+		"name": " bp pulse "
+	},
+
+	{
+		"place": " Q-Park Chinatown ",
+		"address": " 20 Newport Place, Leicester Square, Greater London, WC2H 7PR ",
+		"name": " bp pulse "
+	},
+
+	{
+		"place": " St James's Square ",
+		"address": " St James's Square, WestminsterSt. James's, Greater London, SW1Y 4LH ",
+		"name": " ESB Energy "
+	},
+
+	{
+		"place": " Exeter Street ",
+		"address": " 17 Exeter Street, Covent Garden, Greater London, WC2E 7DU ",
+		"name": " bp pulse "
+	},
+
+	{ "place": " Golden Square ", "address": " 33 Golden Square, Soho, Greater London, W1F 9JT ", "name": " Source London " },
+
+	{
+		"place": " 23 Queen Anne's Gate ",
+		"address": " 23 Queen Anne's Gate, Buckingham Gate, Greater London, SW1H 9BU ",
+		"name": " ubitricity "
+	},
+
+	{ "place": " Carlisle Street ", "address": " Side of 38, Soho Square Soho, Greater London, W1D 3BX ", "name": " bp pulse " },
+
+	{
+		"place": " Q-Park Burlington Street ",
+		"address": " Old Burlington Street, Hanover Square, Greater London, W1S 3AS ",
+		"name": " bp pulse "
+	},
+
+	{
+		"place": " Concert Hall Approach ",
+		"address": " Lambeth, Bankside, Greater London, SE1 8XU ",
+		"name": " Charge Your Car "
+	},
+
+	{ "place": " Q-Park Soho ", "address": " Poland Street, Soho, Greater London, W1F 7NQ ", "name": " bp pulse " },
+
+	{
+		"place": " 20 Great Queen Street ",
+		"address": " 20 Great Queen Street, Drury Lane, Greater London, WC2B 5AZ ",
+		"name": " ubitricity "
+	},
+
+	{
+		"place": " Park Plaza Westminster Bridge Hotel ",
+		"address": " 200 Westminster Bridge Road, Bankside, Greater London SE1 7UT ",
+		"name": " ZeroNet "
+	}
+]

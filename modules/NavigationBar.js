@@ -1,6 +1,23 @@
 'use strict'
 export const NavigationBarFunctionalities = {
-   darkMode: localStorage.getItem('darkMode'),
+	modes: {
+		dark: {
+			'--white': 'black',
+			'--lilla': 'grey',
+			'--blaxkForBoxShadow': 'white',
+			buttonImg: 'images/sun.png',
+			word: 'Dark mode',
+			'--grey': 'rgb(234, 234, 247)',
+		},
+		light: {
+			'--white': 'white',
+			'--lilla': 'rgb(234, 234, 247)',
+			'--blaxkForBoxShadow': 'rgb(36, 36, 36)',
+			buttonImg: 'images/moon.png',
+			word: 'Light mode',
+			'--grey': 'grey',
+		},
+	},
 	centerNavigationLinksTextVertically: function () {
 		const arrayOfNavigationLinksWrappers = Array.from(this.divAroundNavLinks);
 		const height = arrayOfNavigationLinksWrappers[0].offsetHeight;
@@ -22,12 +39,25 @@ export const NavigationBarFunctionalities = {
 		}
 	},
 	toggleDarkOrLight: function () {
-      this.toggleDarkOrLightModeButton.style.color = 'yellow'
-      this.toggleDarkOrLightModeButton.style.backgroundColor= 'white'
-   },
-   build: function() {
-      const nav = document.createElement('nav')
-      nav.innerHTML = `
+		this.darkMode = !this.darkMode;
+		localStorage.setItem('darkMode', this.darkMode);
+		const mode = this.darkMode ? this.modes.dark : this.modes.light;
+		const opposite = this.darkMode ? this.modes.light : this.modes.dark;
+
+		const r = document.querySelector(':root');
+
+		for (const property in this.modes.dark) {
+			r.style.setProperty(property, mode[property]);
+		}
+
+		this.toggleDarkOrLightModeButton.style.backgroundColor = mode['--white'];
+		this.toggleDarkOrLightModeButton.style.color = opposite['--white'];
+		this.toggleDarkOrLightModeButton.querySelector('img').src = mode.buttonImg;
+		this.toggleDarkOrLightModeButton.querySelector('span').textContent = opposite.word;
+	},
+	build: function () {
+		const nav = document.createElement('nav');
+		nav.innerHTML = `
       <img src="images/logo.png" />
 			<div id='divAroundVadLinks'>
 				<a href="home.html" class='navAhref'>
@@ -36,11 +66,8 @@ export const NavigationBarFunctionalities = {
             <a href="cars.html" class='navAhref'>
 					<div class="navigationLinkWrapper">Cars</div>
 				</a>
-            <a href="/" class='navAhref'>
+            <a href="charging-points.html" class='navAhref'>
 					<div class="navigationLinkWrapper">Charging points</div>
-				</a>
-            <a href="/" class='navAhref'>
-					<div class="navigationLinkWrapper">Contact us</div>
 				</a>
 			</div>
 
@@ -50,7 +77,7 @@ export const NavigationBarFunctionalities = {
       <img id='sun' src='./images/sun.png' alt='toggle light mode' style='width: 10px; display: none;'/>
       </button>
 
-         <button id='hamburgerButton' style='background-color: rgba(0,0,0,0); border: none;'>
+         <button id='hamburgerButton' >
    
            <div id='hamburgerline1'></div>
            <div  id='hamburgerline2'></div>
@@ -64,40 +91,41 @@ export const NavigationBarFunctionalities = {
             <a href="cars.html">
 					<div class="navigationLinkWrapper">Cars</div>
 				</a>
-            <a href="/">
+            <a href="charging-points.html">
 					<div class="navigationLinkWrapper">Charging points</div>
-				</a>
-            <a href="/">
-					<div class="navigationLinkWrapper">Contact us</div>
 				</a>
 			</div>`;
 
-      document.body.insertBefore(nav, document.body.firstChild)
+		document.body.insertBefore(nav, document.body.firstChild);
 
-      this.nav = document.querySelector('nav')
-      this.hamburgerButton = document.querySelector('#hamburgerButton')
-      this.divAroundNavLinksMobile= document.querySelector('#divAroundVadLinksMobile')
-	this.divAroundNavLinks= document.querySelectorAll('.navigationLinkWrapper')
-	this.toggleDarkOrLightModeButton= document.querySelector('#toggleDarkOrLightMode')
-   },
+		this.nav = document.querySelector('nav');
+		this.hamburgerButton = document.querySelector('#hamburgerButton');
+		this.divAroundNavLinksMobile = document.querySelector('#divAroundVadLinksMobile');
+		this.divAroundNavLinks = document.querySelectorAll('.navigationLinkWrapper');
+		this.toggleDarkOrLightModeButton = document.querySelector('#toggleDarkOrLightMode');
+		this.darkMode =
+			!!localStorage.getItem('darkMode') ||
+			(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+	},
 
-   init: function () {
-      this.build()
+	init: function () {
+		this.build();
 		this.toggleDarkOrLightModeButton.addEventListener('click', () => this.toggleDarkOrLight());
 		this.divAroundNavLinksMobile.style.display = 'none';
 		this.centerNavigationLinksTextVertically();
+		if (this.darkMode) this.toggleDarkOrLight();
 		window.addEventListener('resize', () => this.centerNavigationLinksTextVertically());
 
 		this.adjustHeightOfNavigationLinksWrapperForMobile();
 		window.addEventListener('resize', () => this.adjustHeightOfNavigationLinksWrapperForMobile());
 
-      this.hamburgerButton.addEventListener('click', () => this.handleHamburgerButtonClick(), true);
-      
-      for (const link of Array.from(document.querySelectorAll('.navAhref'))) {
-							const lastPieceOfUrl = '/' + window.location.href.split('/').at(-1);
-							if (link.href.includes(lastPieceOfUrl)) {
-								link.classList.toggle('active', true);
-         }
-						}
+		this.hamburgerButton.addEventListener('click', () => this.handleHamburgerButtonClick(), true);
+
+		for (const link of Array.from(document.querySelectorAll('.navAhref'))) {
+			const lastPieceOfUrl = '/' + window.location.href.split('/').at(-1);
+			if (link.href.includes(lastPieceOfUrl)) {
+				link.classList.toggle('active', true);
+			}
+		}
 	},
 };

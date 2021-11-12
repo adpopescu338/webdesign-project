@@ -6,6 +6,7 @@
    --white: white;
    --grey: grey;
    --blaxkForBoxShadow: black;
+   --blue: blue;
 }
 *{
    margin: 0;
@@ -26,6 +27,7 @@ main{
 }
 main *{
    max-width: 80vw;
+   overflow: hidden;
 }
 
 #title{
@@ -89,8 +91,15 @@ a:hover{
 a{
    text-decoration: none;
    border-radius: 7px;
+   color: var(--blue);
+   overflow: hidden;
+   padding: 5px;
 }
 
             main a:hover{
          background-color: var(--lilla);
+      }
+
+      .creditLinks{
+         margin-left: 8px;
       }

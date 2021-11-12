@@ -12,11 +12,11 @@ import { NavigationBarFunctionalities } from './modules/NavigationBar.js';
 NavigationBarFunctionalities.init();
 Footer.init();
 
-export function appendCreditForCars(string, href) {
-	const link = href.replace('https://www.', '').replace('http://www.').split('/')[0];
+export function appendCreditForCars(string, ...hrefs) {
+   const links = hrefs.map(h=>`<a class='creditLinks' href='${h}' target='_blank'>${h.replace('https://www.', '').split('/')[ 0 ]}</a>`)
 	const div = document.createElement('div');
 	div.style.textAlign = 'center';
 
-	div.innerHTML = `<span>${string} <a href='${href}' target='_blank'>${link}</a></span>`;
+	div.innerHTML = `<span>${string} ${links}</span>`;
 	document.querySelector('main').appendChild(div);
 }

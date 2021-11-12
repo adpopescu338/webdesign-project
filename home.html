@@ -6,25 +6,58 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>EV</title>
 		<link rel="stylesheet" href="styles/main.css" />
-		<link rel="stylesheet" href="styles/home.css" />
+		<style>
+			[src='images/EVchart.png'] {
+				width: 80%;
+				border-radius: 10px;
+				box-shadow: 0 0 5px var(--blaxkForBoxShadow);
+				max-width: 700px;
+			}
+			figure {
+				font-size: medium;
+				text-align: center;
+				margin: 8px;
+				padding: 5px;
+			}
+
+			li > a {
+				text-decoration: none;
+				padding: 4px;
+				margin: 4px;
+				border-radius: 8px;
+				font-size: large;
+			}
+
+         main article h3{
+            text-indent: 5%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+         }
+
+         #envImpactImage{
+            max-width: 100%;
+         }
+		</style>
 	</head>
 	<body>
 		<main aria-labelledby="title">
 			<h1 id="title">Electric cars</h1>
 			<h3 id="pageContents">Page contents</h3>
-			<ul id="ulPageContents" aria-labelledby="pageContents" style="margin-bottom: 25px">
-				<li><a href="javascript:void(0)">EV industry</a></li>
-				<li><a href="javascript:void(0)">Price differences</a></li>
-				<li><a href="javascript:void(0)">Envirnmental impact</a></li>
-				<li><a href="javascript:void(0)">Our options</a></li>
-			</ul>
+			<ul aria-labelledby="pageContents" style="margin-bottom: 25px"></ul>
 
 			<h2 id="EV-industry">EV industry</h2>
 			<article aria-labelledby="EV-industry">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-				sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				The chart below shows the number of registrations and market share of plug-in vehicles each month over the past 13
+				months. Due to the impact of the coronavirus pandemic, sales of all vehicles were hit from mid-March. However,
+				electric vehicles were affected less than other vehicle types, as can be seen by the anomalous market share in
+				April.
+				<br />
+				<br />
+				Electric vehicle registrations continue to rise in absolute numbers, with 24,537 new registrations in October 2021
+				(16,155 BEVs and 8,382 PHEVs). The market share last month was 23.1%. Note that, in the UK, March and September are
+				new registration plate months, which accounts for the twice-yearly peaks in sales and drop in market share in these
+				periods.
+				<br />
 				<figure>
 					<img src="images/EVchart.png" alt="electronic vehicles industry chart" />
 					<figcaption>Electronic vehicles industry chart 2012-2021</figcaption>
@@ -33,36 +66,306 @@
 
 			<h2 id="Price-differences">Price differences</h2>
 			<article aria-labelledby="Price-differences">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-				sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				<div>
+					<p>
+						Although the purchase price of an EV is normally higher than the purchase price of fuel cars, the time has come
+						where Electric Vehicles are now beginning to even out in terms of costs. However, there are still some people who
+						are skeptical about the evolution that has taken place in the world of mobility. In most cases this is the result
+						of
+						<a target="_blank" href="https://newmotion.com/en_GB/common-misconceptions-about-ev-driving"
+							>misconceptions about electric driving</a
+						>.
+					</p>
+					<h3 id="casestudydifferencebetweenafullyelectrichybridpetrolanddieselcar">
+						Case study: Difference between a fully electric, hybrid, petrol and diesel car
+					</h3>
+					<p>
+						The Total Cost of Ownership (TCO) of an EV is lower, according to the
+						<a
+							target="_blank"
+							href="https://www.theicct.org/sites/default/files/publications/EU_vehicle_taxation_Report_20181214_0.pdf"
+							>report</a
+						>
+						from the International Council on Clean Transport (ICCT). The report studied the cost factors of owning a VW Golf
+						in five separate European countries - Norway, Germany, France, United Kingdom and the Netherlands. Despite the
+						fact that only a VW Golf is included in this research, it signals the start of the EV revolution in Europe.
+					</p>
+					<p>
+						The study examined the purchase, fuel and tax costs of the VW Golf in four different versions:
+						<a target="_blank" href="https://newmotion.com/en_GB/charging-a-volkswagen-golf-gte">fully electric</a>, plug-in
+						hybrid, petrol and diesel.
+					</p>
+					<p>
+						The graph below shows the difference between
+						<a
+							target="_blank"
+							href="https://newmotion.com/en_GB/comparisons-between-an-electric-car-a-hybrid-car-and-a-traditional-car"
+							>electric and fuel cars</a
+						>, where the vertical axis shows the costs associated over four years for a VW Golf in all five countries.
+					</p>
+					<picture
+						><source
+							media="(max-width: 767px)"
+							type="image/webp"
+							srcset="//img2.storyblok.com/480x0/filters:quality(85):format(webp)/f/85281/4052aae2d7/vw-golf-icct-5gxu.png" />
+						<source
+							type="image/webp"
+							srcset="//img2.storyblok.com/802x0/filters:quality(85):format(webp)/f/85281/4052aae2d7/vw-golf-icct-5gxu.png" />
+						<source
+							media="(max-width: 767px)"
+							type=""
+							srcset="//img2.storyblok.com/480x0/filters:quality(85):format()/f/85281/4052aae2d7/vw-golf-icct-5gxu.png" />
+						<source
+							type=""
+							srcset="//img2.storyblok.com/802x0/filters:quality(85):format()/f/85281/4052aae2d7/vw-golf-icct-5gxu.png" />
+						<img src="//a.storyblok.com/f/85281/4052aae2d7/vw-golf-icct-5gxu.png" alt="" decoding="async" loading="lazy"
+					/></picture>
+					<p>
+						Over a period of four years, fully electric cars were the cheapest in all five countries because of tax reduction,
+						cheaper fuel costs and subsidies on purchase prices. In particular, the rise of the EV industry and the lower
+						costs of owning one have been stimulated through government grants and tax reductions. InsideEVs, Jalopnik and
+						Oilprice confirm ICCT’s report with their own findings on how Electric Vehicles are cheaper compared to non-EVs.
+					</p>
+					<p>
+						In general, the EV charging cost is significantly lower compared to fuel costs for petrol cars. Jalopnik
+						calculated that you can save more than €1,200 per year on fuel costs
+						<a target="_blank" href="https://newmotion.com/en_GB/charging-a-tesla-model-3">driving a Tesla Model 3</a>
+						Performance instead of an Alfa Romeo Giulia Quadrifoglio. Not only is regular fuel more expensive, but hydrogen
+						cars also lose to EVs with respect to fueling costs, according to Oilprice. Coming from water, hydrogen seems to
+						be a cheaper fuel. However, it requires an additional external source to split the H2O molecules into hydrogen and
+						oxygen. This process is not developed in an optimal way and therefore results in a more expensive fuel.
+					</p>
+					<picture
+						><source
+							media="(max-width: 767px)"
+							type="image/webp"
+							srcset="
+								//img2.storyblok.com/480x0/filters:quality(85):format(webp)/f/85281/f767f5c4be/vc-blog-image-h-2-43tx.png
+							" />
+						<source
+							type="image/webp"
+							srcset="
+								//img2.storyblok.com/802x0/filters:quality(85):format(webp)/f/85281/f767f5c4be/vc-blog-image-h-2-43tx.png
+							" />
+						<source
+							media="(max-width: 767px)"
+							type=""
+							srcset="//img2.storyblok.com/480x0/filters:quality(85):format()/f/85281/f767f5c4be/vc-blog-image-h-2-43tx.png" />
+						<source
+							type=""
+							srcset="//img2.storyblok.com/802x0/filters:quality(85):format()/f/85281/f767f5c4be/vc-blog-image-h-2-43tx.png" />
+						<img src="//a.storyblok.com/f/85281/f767f5c4be/vc-blog-image-h-2-43tx.png" alt="" decoding="async" loading="lazy"
+					/></picture>
+					<h3 id="norwayandthebenefitofdrivingelectric">Norway and the benefit of driving electric</h3>
+					<p>
+						Besides fuel costs, tax reductions take a great part in the lower TCO for Electric cars. For example, InsideEVs
+						shows that the rest of the world can learn from Norway’s tax system. Indeed,
+						<a target="_blank" href="https://newmotion.com/en_GB/norway-is-leading-ev-owning-country-in-the-world"
+							>Norway is currently leading</a
+						>
+						the way to e-mobility in Europe. EV drivers benefit from tax savings, which results in a lower purchase price and
+						a lower overall TCO. This tax system stimulates Norwegians to drive electric and will eventually bring the
+						government a step closer to reach their sustainability targets.
+					</p>
+					<p>
+						Another Norwegian government policy is the bonus payment scheme for high-emission vehicles. The Netherlands is
+						also using this policy to encourage people to drive electric, to expand the EV charging point network and help
+						businesses to adopt e-fleet.
+					</p>
+					<p>
+						Fortunately, more and more European countries have made financial incentives available to promote the EV and
+						charging stations, such as the
+						<a target="_blank" href="https://newmotion.com/en_GB/the-office-of-low-emission-vehicles-olev-grant">OLEV grant</a
+						>.
+					</p>
+					<p>
+						In short, petrol fuelled cars are not the cheapest options anymore and neither are hydrogen cars: EVs are taking
+						over the market.
+					</p>
+					<h3 id="letspowertheemobilitymovementtogether">Let’s power the e-mobility movement together!</h3>
+					<ol>
+						<li><a target="_blank" href="https://insideevs.com/electric-car-lessons-norway/">InsideEVs</a></li>
+						<li>
+							<a target="_blank" href="https://jalopnik.com/heres-how-much-the-tesla-model-3-performance-saves-in-f-1832956649"
+								>Jalopnik</a
+							>
+						</li>
+						<li>
+							<a
+								target="_blank"
+								href="https://oilprice.com/Energy/Crude-Oil/Hydrogen-Cars-Struggle-To-Compete-With-Electric-Vehicles.html"
+								>Oilprice</a
+							>
+						</li>
+					</ol>
+				</div>
 			</article>
 
-			<h2 id="Envirnmental-impact">Envirnmental impact</h2>
+			<h2 id="Environmental-impact">Environmental impact</h2>
 			<article aria-labelledby="Envirnmental-impact">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-				sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				<div>
+						<div>
+							<picture
+								><source
+									srcset="
+										https://www.edfenergy.com/sites/default/files/styles/webp__optimise/public/electric_car_green_environment.jpg?itok=DOHrw0Qt
+									"
+									type="image/webp" />
+								<img
+                        id='envImpactImage'
+									loading="lazy"
+									src="https://www.edfenergy.com/sites/default/files/styles/optimise/public/electric_car_green_environment.jpg?itok=x7zbOYEz"
+									alt="electric car environment EDF"
+									title="electric car green environment"
+							/></picture>
+						</div>
+					<h3 >Are electric cars better for the environment?</h3>
+					<p>
+						The major benefit of electric cars is the contribution that they can make towards improving air quality in towns
+						and cities. With no tailpipe, pure electric cars produce no carbon dioxide emissions when driving. This reduces
+						air pollution considerably.
+					</p>
+					<p>
+						Put simply, electric cars give us&nbsp;cleaner streets&nbsp;making our towns and cities a better place to be for
+						pedestrians and cyclists. In over a year, just
+						<a href="https://co2.myclimate.org/" target="_blank"
+							>one electric car on the roads can&nbsp;save an average 1.5 million grams of&nbsp;CO2</a
+						>. That’s the equivalent of four return flights from London to Barcelona.
+					</p>
+					<p>&nbsp;</p>
+					<h3>Electric cars and UK's Net Zero target</h3>
+					<p>
+						According to the
+						<a
+							href="https://www.london.gov.uk/sites/default/files/shorthand/cleaner_vehicles/"
+							target="_blank"
+							>Mayor of London, road transport accounts for around half of the capital's air pollution</a
+						>. It’s no wonder that the UK government and local councils want to accelerate the number of electric cars on the
+						roads. The UK government has set a target that the&nbsp;sale of petrol and diesel cars will be banned by 2040. The
+						government is also looking to&nbsp;reduce carbon emissions to zero by 2050, and electric cars will play a big role
+						in that.&nbsp;
+					</p>
+					<p>
+						What's more, EVs can also help with noise pollution, especially in cities where speeds are generally low. As
+						electric cars are far quieter than conventional vehicles, driving electric creates a more peaceful environment for
+						us all.
+					</p>
+					<p>&nbsp;</p>
+					<h3>Compare an electric vs petrol car</h3>
+					<p>
+						The&nbsp;Luxembourg Institute of Science and Technology&nbsp;has put a fabulous&nbsp;tool together to help you<a
+							href="https://www.list.lu"
+							target="_blank"
+						>
+							compare the overall environmental impact&nbsp;of electric cars vs internal combustion engine (petrol) cars</a
+						>. The main aim is to let users understand why, how, and in which cases electro-mobility is actually performing
+						according to its green image, by cutting per-km emissions from its fossil fuel-based counterpart. A second
+						objective is to show in which conditions electric vehicles may "counter-perform": what happens when the battery
+						size changes;&nbsp;or the background electricity mix;&nbsp;the battery lifetime;&nbsp;what about winter conditions
+						affecting battery performances?
+					</p>
+					<p>&nbsp;</p>
+					<h3>How does electric car production affect the environment?&nbsp;</h3>
+					<p>
+						Making electric cars does use a lot of energy. Even after taking battery manufacture into account, electric cars
+						are still a greener option.&nbsp;This is because of&nbsp;the reduction in emissions created over the car’s
+						lifetime
+					</p>
+					<p>
+						The emissions created during the production of an electric car tend to be higher than a conventional car. This is
+						due to the manufacture of lithium ion batteries which are an essential part of an electric car.&nbsp;<a
+							href="https://theicct.org/sites/default/files/publications/EV-life-cycle-GHG_ICCT-Briefing_09022018_vF.pdf"
+							target="_blank"
+							>More than a third of the lifetime CO2 emissions from an electric car come from the energy used to make the car
+							itself</a
+						>. As technology advances, this is changing for the better.&nbsp;
+					</p>
+					<p>
+						<a href="https://www.edfenergy.com/electric-cars/batteries"
+							>Reusing and recycling batteries is also a growing market</a
+						>.&nbsp;Research into the use of second-hand batteries is looking at ways to reuse batteries in new technologies
+						such as electricity storage.&nbsp;One day we could all have batteries in our homes being used to store our own
+						energy. Opportunities like this will reduce the lifetime environmental impact of battery manufacture.
+					</p>
+					<p>&nbsp;</p>
+					<h3>What about the electricity required to fuel an electric car?&nbsp;</h3>
+					<p>
+						<a href="https://www.eea.europa.eu/publications/electric-vehicles-from-life-cycle" target="_blank"
+							>Research by the European Energy Agency&nbsp;</a
+						>found that, even with electricity generation, the carbon emissions of an electric car are around 17 – 30% lower
+						than driving a petrol or diesel car. The emissions from electricity generation are also dramatically improved when
+						low carbon electricity is used.
+					</p>
+					<p>
+						That’s good news for our customers.&nbsp;Here at EDF we produce more low-carbon electricity than any other
+						supplier&nbsp;in the UK<a
+							href="#footnote-generation-electric"
+							title="Generation Electric "
+							>(1)</a
+						>.&nbsp;The<a href="https://www.edfenergy.com/electric-cars/tariffs"
+							>&nbsp;GoElectric tariff&nbsp;is also generated from 100% renewable sources</a
+						>, helping electric car drivers to make more informed choices about how they charge up, maximising their
+						environmental impact whilst&nbsp;driving.
+					</p>
+					<p>&nbsp;</p>
+					<h3>Are hybrid cars just as good for the environment?</h3>
+					<p>
+						Plug-in hybrids combine an electric motor with a traditional fuel engine and produce some emissions during a
+						drive.
+					</p>
+					<p>
+						The green credentials of a hybrid depend on how much of the journey is driven on electric miles as well as the way
+						in which the vehicle is charged.&nbsp; This is why it's important for hybrid drivers to consider how their
+						electricity is generated.&nbsp;Choose a form of
+						<a href="https://www.edfenergy.com/electric-cars/tariffs">renewable energy, like the&nbsp;GoElectric tariff</a>,
+						and you’re making your contribution to reducing emissions.
+					</p>
+					<p>
+						All this shows that electric vehicles have a big role to play in reducing transport emissions and being a major
+						factor in cleaning up the air we breathe.
+					</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<h3>Is your business looking to help the planet?</h3>
+					<p>
+						Have a look at this <a href="cars.html">electric vehicle list</a> and see how you could help reduce your
+						business's emissions.&nbsp;
+					</p>
+				</div>
 			</article>
-
-			<h2 id="Our-options">Our options</h2>
-			<article aria-labelledby="Our-options">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-				sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-			</article>
+         <hr style="margin-bottom: 20px;">
 		</main>
 	</body>
 	<script type="module" src="main.js"></script>
-	<script>
-		Array.from(document.querySelectorAll('#ulPageContents li a')).forEach((a) => {
-			a.onclick = () => {
-				const correspondingArticle = document.querySelector('#' + a.innerHTML.replace(/ /g, '-'));
-				correspondingArticle.scrollIntoView({ behavior: 'smooth' });
-			};
-		});
+	<script type="module">
+       import {appendCreditForCars} from './main.js'
+		!(function setListOnPageContent() {
+			const ul = document.querySelector('main ul');
+
+			Array.from(document.querySelectorAll('h2')).forEach((h2) => {
+				const h2id = h2.textContent.replace(/ /g, '_');
+				h2.setAttribute('id', h2id);
+				const li = document.createElement('li');
+				li.setAttribute('id', `li_${h2id}`);
+				li.innerHTML = `<a href='javascript:void(0)'>${h2.textContent}</a><ul></ul>`;
+				ul.appendChild(li);
+				li.addEventListener('click', () => h2.scrollIntoView({ behavior: 'smooth' }));
+			});
+
+				Array.from(document.querySelectorAll('main h3')).forEach((item, index) => {
+               if(!index) return;
+               let parentH2 = item.parentNode
+               while(parentH2.tagName !== 'ARTICLE'){
+                  parentH2 = parentH2.parentNode
+               }
+               const ulId = 'li_' + parentH2.previousElementSibling.textContent.replace(/ /g, '_')
+               const li = document.createElement('li')
+               li.innerHTML = `<a href='javascript:void(0)'>${item.textContent}</a>`;
+               document.querySelector(`#${ulId} ul`).appendChild(li)
+               li.addEventListener('click', ()=>item.scrollIntoView({ behavior: 'smooth' }))
+				});
+		})();
+
+ appendCreditForCars('Content from', 'https://www.nextgreencar.com/electric-cars/statistics/', 'https://www.newmotion.com/en-gb/knowledge-centre/news-and-updates/electric-car-cost-vs-fuel-car-cost', 'https://www.edfenergy.com/for-home/energywise/electric-cars-and-environment')
 	</script>
 </html>

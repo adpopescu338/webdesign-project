@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+
 export const NavigationBarFunctionalities = {
 	modes: {
 		dark: {
@@ -8,6 +9,7 @@ export const NavigationBarFunctionalities = {
 			buttonImg: 'images/sun.png',
 			word: 'Dark mode',
 			'--grey': 'rgb(234, 234, 247)',
+			'--blue': 'yellow',
 		},
 		light: {
 			'--white': 'white',
@@ -16,6 +18,7 @@ export const NavigationBarFunctionalities = {
 			buttonImg: 'images/moon.png',
 			word: 'Light mode',
 			'--grey': 'grey',
+			'--blue': 'blue'
 		},
 	},
 	centerNavigationLinksTextVertically: function () {
@@ -38,9 +41,17 @@ export const NavigationBarFunctionalities = {
 			this.divAroundNavLinksMobile.style.display = 'none';
 		}
 	},
-	toggleDarkOrLight: function () {
-		this.darkMode = !this.darkMode;
-		localStorage.setItem('darkMode', this.darkMode);
+	toggleDarkOrLight: function (event) {
+		console.log(this);
+		if (event?.target) {
+			this.darkMode = !this.darkMode;
+			if (this.darkMode) {
+				localStorage.setItem('darkMode', true);
+			} else {
+				localStorage.clear();
+			}
+		}
+
 		const mode = this.darkMode ? this.modes.dark : this.modes.light;
 		const opposite = this.darkMode ? this.modes.light : this.modes.dark;
 
@@ -86,7 +97,7 @@ export const NavigationBarFunctionalities = {
 
          			<div id='divAroundVadLinksMobile'>
 				<a href="home.html">
-					<div class="navigationLinkWrapper active">Home</div>
+					<div class="navigationLinkWrapper">Home</div>
 				</a>
             <a href="cars.html">
 					<div class="navigationLinkWrapper">Cars</div>
@@ -104,13 +115,12 @@ export const NavigationBarFunctionalities = {
 		this.divAroundNavLinks = document.querySelectorAll('.navigationLinkWrapper');
 		this.toggleDarkOrLightModeButton = document.querySelector('#toggleDarkOrLightMode');
 		this.darkMode =
-			!!localStorage.getItem('darkMode') ||
-			(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+			localStorage.getItem('darkMode') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
 	},
 
 	init: function () {
 		this.build();
-		this.toggleDarkOrLightModeButton.addEventListener('click', () => this.toggleDarkOrLight());
+		this.toggleDarkOrLightModeButton.addEventListener('click', (e) => this.toggleDarkOrLight(e));
 		this.divAroundNavLinksMobile.style.display = 'none';
 		this.centerNavigationLinksTextVertically();
 		if (this.darkMode) this.toggleDarkOrLight();
@@ -121,7 +131,7 @@ export const NavigationBarFunctionalities = {
 
 		this.hamburgerButton.addEventListener('click', () => this.handleHamburgerButtonClick(), true);
 
-		for (const link of Array.from(document.querySelectorAll('.navAhref'))) {
+		for (const link of Array.from(document.querySelectorAll('nav a'))) {
 			const lastPieceOfUrl = '/' + window.location.href.split('/').at(-1);
 			if (link.href.includes(lastPieceOfUrl)) {
 				link.classList.toggle('active', true);

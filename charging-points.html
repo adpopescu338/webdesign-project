@@ -4,11 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EV</title>
+		<meta name="description" content="EV Charging points" />
+		<meta name="keywords" content="EV, electronic vehicles, charging points" />
+		<meta name="author" content="Alexandru Popescu" />
+		<meta name="theme-color" content="rgb(234, 234, 247)" />
+		<title>Charging points</title>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" href="styles/main.css" />
 		<style>
-			/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
 			main * {
 				overflow: visible;
 			}
@@ -17,9 +20,9 @@
 				margin-top: 25px;
 				margin-bottom: 25px;
 				border-radius: 4px;
-				border: 1px solid var( --greyLight);
+				border: 1px solid var(--greyLight);
 				box-shadow: 0 0 5px var(--blaxkForBoxShadow);
-            max-width: 100%;
+				max-width: 100%;
 			}
 
 			main article h4 {
@@ -29,11 +32,11 @@
 
 			main article address {
 				display: inline;
-              color: var(--blue);
+				color: var(--blue);
 			}
 
 			main li {
-				border-bottom: 1px solid var( --greyLight);
+				border-bottom: 1px solid var(--greyLight);
 			}
 
 			main article a {
@@ -55,7 +58,7 @@
 
 			<h2 id="listTitle">List of charging points</h2>
 			<section aria-labelledby="listTitle"></section>
-         <hr style='margin-bottom: 20px;'>
+			<hr style="margin-bottom: 20px" />
 		</main>
 	</body>
 	<script type="module" src="main.js"></script>
@@ -76,13 +79,13 @@
 				.catch((e) => console.error(e));
 
 			function appendmarkers(r) {
-				r.forEach(({lat, lon}) => {
+				r.forEach(({ lat, lon }) => {
 					const marker = new google.maps.Marker({
 						position: { lat, lng: lon },
 						map,
 						title: 'EV charging point',
 					});
-                 marker.addListener("click", ()=>window.open('https://maps.google.com/'))
+					marker.addListener('click', () => window.open('https://maps.google.com/'));
 				});
 			}
 		}

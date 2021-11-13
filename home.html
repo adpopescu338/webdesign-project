@@ -4,8 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EV</title>
+		<meta name="description" content="EV" />
+		<meta name="keywords" content="EV, electronic vehicles" />
+		<meta name="author" content="Alexandru Popescu" />
+      <meta name="theme-color" content="rgb(234, 234, 247)">
+		<title>HOME</title>
 		<link rel="stylesheet" href="styles/main.css" />
+      <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 		<style>
 			[src='images/EVchart.png'] {
 				width: 80%;
@@ -28,15 +33,15 @@
 				font-size: large;
 			}
 
-         main article h3{
-            text-indent: 5%;
-            margin-top: 15px;
-            margin-bottom: 15px;
-         }
+			main article h3 {
+				text-indent: 5%;
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
 
-         #envImpactImage{
-            max-width: 100%;
-         }
+			#envImpactImage {
+				max-width: 100%;
+			}
 		</style>
 	</head>
 	<body>
@@ -204,22 +209,22 @@
 			<h2 id="Environmental-impact">Environmental impact</h2>
 			<article aria-labelledby="Envirnmental-impact">
 				<div>
-						<div>
-							<picture
-								><source
-									srcset="
-										https://www.edfenergy.com/sites/default/files/styles/webp__optimise/public/electric_car_green_environment.jpg?itok=DOHrw0Qt
-									"
-									type="image/webp" />
-								<img
-                        id='envImpactImage'
-									loading="lazy"
-									src="https://www.edfenergy.com/sites/default/files/styles/optimise/public/electric_car_green_environment.jpg?itok=x7zbOYEz"
-									alt="electric car environment EDF"
-									title="electric car green environment"
-							/></picture>
-						</div>
-					<h3 >Are electric cars better for the environment?</h3>
+					<div>
+						<picture
+							><source
+								srcset="
+									https://www.edfenergy.com/sites/default/files/styles/webp__optimise/public/electric_car_green_environment.jpg?itok=DOHrw0Qt
+								"
+								type="image/webp" />
+							<img
+								id="envImpactImage"
+								loading="lazy"
+								src="https://www.edfenergy.com/sites/default/files/styles/optimise/public/electric_car_green_environment.jpg?itok=x7zbOYEz"
+								alt="electric car environment EDF"
+								title="electric car green environment"
+						/></picture>
+					</div>
+					<h3>Are electric cars better for the environment?</h3>
 					<p>
 						The major benefit of electric cars is the contribution that they can make towards improving air quality in towns
 						and cities. With no tailpipe, pure electric cars produce no carbon dioxide emissions when driving. This reduces
@@ -236,9 +241,7 @@
 					<h3>Electric cars and UK's Net Zero target</h3>
 					<p>
 						According to the
-						<a
-							href="https://www.london.gov.uk/sites/default/files/shorthand/cleaner_vehicles/"
-							target="_blank"
+						<a href="https://www.london.gov.uk/sites/default/files/shorthand/cleaner_vehicles/" target="_blank"
 							>Mayor of London, road transport accounts for around half of the capital's air pollution</a
 						>. It’s no wonder that the UK government and local councils want to accelerate the number of electric cars on the
 						roads. The UK government has set a target that the&nbsp;sale of petrol and diesel cars will be banned by 2040. The
@@ -298,11 +301,8 @@
 					</p>
 					<p>
 						That’s good news for our customers.&nbsp;Here at EDF we produce more low-carbon electricity than any other
-						supplier&nbsp;in the UK<a
-							href="#footnote-generation-electric"
-							title="Generation Electric "
-							>(1)</a
-						>.&nbsp;The<a href="https://www.edfenergy.com/electric-cars/tariffs"
+						supplier&nbsp;in the UK<a href="#footnote-generation-electric" title="Generation Electric ">(1)</a>.&nbsp;The<a
+							href="https://www.edfenergy.com/electric-cars/tariffs"
 							>&nbsp;GoElectric tariff&nbsp;is also generated from 100% renewable sources</a
 						>, helping electric car drivers to make more informed choices about how they charge up, maximising their
 						environmental impact whilst&nbsp;driving.
@@ -333,12 +333,12 @@
 					</p>
 				</div>
 			</article>
-         <hr style="margin-bottom: 20px;">
+			<hr style="margin-bottom: 20px" />
 		</main>
 	</body>
 	<script type="module" src="main.js"></script>
 	<script type="module">
-       import {appendCreditForCars} from './main.js'
+		import { appendCreditForCars } from './main.js';
 		!(function setListOnPageContent() {
 			const ul = document.querySelector('main ul');
 
@@ -352,20 +352,25 @@
 				li.addEventListener('click', () => h2.scrollIntoView({ behavior: 'smooth' }));
 			});
 
-				Array.from(document.querySelectorAll('main h3')).forEach((item, index) => {
-               if(!index) return;
-               let parentH2 = item.parentNode
-               while(parentH2.tagName !== 'ARTICLE'){
-                  parentH2 = parentH2.parentNode
-               }
-               const ulId = 'li_' + parentH2.previousElementSibling.textContent.replace(/ /g, '_')
-               const li = document.createElement('li')
-               li.innerHTML = `<a href='javascript:void(0)'>${item.textContent}</a>`;
-               document.querySelector(`#${ulId} ul`).appendChild(li)
-               li.addEventListener('click', ()=>item.scrollIntoView({ behavior: 'smooth' }))
-				});
+			Array.from(document.querySelectorAll('main h3')).forEach((item, index) => {
+				if (!index) return;
+				let parentH2 = item.parentNode;
+				while (parentH2.tagName !== 'ARTICLE') {
+					parentH2 = parentH2.parentNode;
+				}
+				const ulId = 'li_' + parentH2.previousElementSibling.textContent.replace(/ /g, '_');
+				const li = document.createElement('li');
+				li.innerHTML = `<a href='javascript:void(0)'>${item.textContent}</a>`;
+				document.querySelector(`#${ulId} ul`).appendChild(li);
+				li.addEventListener('click', () => item.scrollIntoView({ behavior: 'smooth' }));
+			});
 		})();
 
- appendCreditForCars('Content from', 'https://www.nextgreencar.com/electric-cars/statistics/', 'https://www.newmotion.com/en-gb/knowledge-centre/news-and-updates/electric-car-cost-vs-fuel-car-cost', 'https://www.edfenergy.com/for-home/energywise/electric-cars-and-environment')
+		appendCreditForCars(
+			'Content from',
+			'https://www.nextgreencar.com/electric-cars/statistics/',
+			'https://www.newmotion.com/en-gb/knowledge-centre/news-and-updates/electric-car-cost-vs-fuel-car-cost',
+			'https://www.edfenergy.com/for-home/energywise/electric-cars-and-environment'
+		);
 	</script>
 </html>

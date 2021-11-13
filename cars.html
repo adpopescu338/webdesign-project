@@ -4,83 +4,89 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EV</title>
+		<meta name="description" content="EV cars" />
+		<meta name="keywords" content="EV, electronic vehicles, cars" />
+		<meta name="author" content="Alexandru Popescu" />
+            <meta name="theme-color" content="rgb(234, 234, 247)">
+		<title>CARS</title>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" href="styles/main.css" />
-      <style>
-        main figure{
-           padding: 8px;
-           border: 1px solid var( --grey);
-           width: fit-content;
-           margin: 7px;
-           box-shadow: 0 0 3px var(--blaxkForBoxShadow);
-           font-family: sans-serif;
-        }
-        main article{
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           margin-top: 10px;
-           border-bottom: 1px solid var( --grey);
-        }
+		<style>
+			main figure {
+				padding: 8px;
+				border: 1px solid var(--grey);
+				width: fit-content;
+				margin: 7px;
+				box-shadow: 0 0 3px var(--blaxkForBoxShadow);
+				font-family: sans-serif;
+			}
+			main article {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 10px;
+				border-bottom: 1px solid var(--grey);
+			}
 
-        main figure figcaption{
-           background-color: var(--lilla);
-           padding: 4px;
-           border-radius: 5px;
-        }
+			main figure figcaption {
+				background-color: var(--lilla);
+				padding: 4px;
+				border-radius: 5px;
+			}
 
-        main article a{
-           text-decoration: none;
-           margin: 9px;
-        }
+			main article a {
+				text-decoration: none;
+				margin: 9px;
+			}
 
-        main article a:hover{
-           background-color: var(--lilla);
-           box-shadow: 0 0 5px var(--blaxkForBoxShadow);
-           border-radius: 7px;
-        }
+			main article a:hover {
+				background-color: var(--lilla);
+				box-shadow: 0 0 5px var(--blaxkForBoxShadow);
+				border-radius: 7px;
+			}
 
-        main article a:focus{
-                      background-color: var(--lilla);
-           box-shadow: 0 0 5px var(--blaxkForBoxShadow);
-           border-radius: 7px;
-        }
+			main article a:focus {
+				background-color: var(--lilla);
+				box-shadow: 0 0 5px var(--blaxkForBoxShadow);
+				border-radius: 7px;
+			}
 
-        main img{
-           max-width: 70vw;
-        }
-      
-      </style>
+			main img {
+				max-width: 70vw;
+			}
+		</style>
 	</head>
 	<body>
-      <main aria-labelledby="title">
-         <h1 id='title'>Compare models</h1>
-      </main>
+		<main aria-labelledby="title">
+			<h1 id="title">Compare models</h1>
+		</main>
 	</body>
 	<script type="module" src="main.js"></script>
-   <script type='module'>
-      import {appendCreditForCars} from './main.js'
+	<script type="module">
+		import { appendCreditForCars } from './main.js';
 
-!function(){//closure for keeping the global context clean
-         fetch('cars.json')
-      .then(r=>r.json())
-      .then(cars=>formatAndAppendCars(cars)
-      )
+		!(function () {
+			//closure for keeping the global context clean
+			fetch('cars.json')
+				.then((r) => r.json())
+				.then((cars) => formatAndAppendCars(cars));
 
+			function formatAndAppendCars(cars) {
+				cars.forEach((car) => {
+					const string = getCarHTML(car);
+					const nodeFromString = new DOMParser().parseFromString(string, 'text/html').querySelector('article');
+					document.querySelector('main').appendChild(nodeFromString);
+				});
 
-      function formatAndAppendCars(cars){
-         cars.forEach(car=>{
-            const string = getCarHTML(car)
-            const nodeFromString = new DOMParser().parseFromString(string, 'text/html').querySelector('article')
- document.querySelector('main').appendChild(nodeFromString)
-         })
+				appendCreditForCars(
+					'Images and descriptions come from',
+					'https://www.caranddriver.com/news/g29994375/future-electric-cars-trucks/'
+				);
+			}
 
-         appendCreditForCars('Images and descriptions come from', 'https://www.caranddriver.com/news/g29994375/future-electric-cars-trucks/', )
-      }
-
-      function getCarHTML({title, img, description, viewCar}){
-         const titleId = title.replace(/ /g, '_')
-         return`
+			function getCarHTML({ title, img, description, viewCar }) {
+				const titleId = title.replace(/ /g, '_');
+				return `
          <article aria-labelledby='${titleId}'>
             <h2 id='${titleId}'>${title}</h2>
             <a class='viewCar' href='${viewCar}' target='_blank'>
@@ -92,9 +98,8 @@
 
                <p title='car description'>${description}</p>
             </article>
-         `
-      }
-}()
-
- </script>
+         `;
+			}
+		})();
+	</script>
 </html>

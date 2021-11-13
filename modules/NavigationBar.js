@@ -42,7 +42,6 @@ export const NavigationBarFunctionalities = {
 		}
 	},
 	toggleDarkOrLight: function (event) {
-		console.log(this);
 		if (event?.target) {
 			this.darkMode = !this.darkMode;
 			if (this.darkMode) {
@@ -64,7 +63,9 @@ export const NavigationBarFunctionalities = {
 		this.toggleDarkOrLightModeButton.style.backgroundColor = mode['--white'];
 		this.toggleDarkOrLightModeButton.style.color = opposite['--white'];
 		this.toggleDarkOrLightModeButton.querySelector('img').src = mode.buttonImg;
-		this.toggleDarkOrLightModeButton.querySelector('span').textContent = opposite.word;
+      this.toggleDarkOrLightModeButton.querySelector('span').textContent = opposite.word;
+      
+
 	},
 	build: function () {
 		const nav = document.createElement('nav');

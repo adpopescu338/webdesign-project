@@ -362,7 +362,8 @@
 				const li = document.createElement('li');
 				li.innerHTML = `<a href='javascript:void(0)'>${item.textContent}</a>`;
 				document.querySelector(`#${ulId} ul`).appendChild(li);
-				li.addEventListener('click', () => item.scrollIntoView({ behavior: 'smooth' }));
+
+				li.addEventListener('click', (e) => {e.stopPropagation(); item.scrollIntoView({ behavior: 'smooth' })}, false);
 			});
 		})();
 

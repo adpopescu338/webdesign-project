@@ -70,7 +70,7 @@ export const NavigationBarFunctionalities = {
 	build: function () {
 		const nav = document.createElement('nav');
 		nav.innerHTML = `
-      <img src="images/logo.png" />
+      <img src="images/logo.png" alt='logo'/>
 			<div id='divAroundVadLinks'>
 				<a href="home.html" class='navAhref'>
 					<div class="navigationLinkWrapper">Home</div>
@@ -83,7 +83,7 @@ export const NavigationBarFunctionalities = {
 				</a>
 			</div>
 
-         <button id='toggleDarkOrLightMode'>
+         <button id='toggleDarkOrLightMode' name='open navigation bar'>
            <span> Dark mode</span>
          <img id='moon' src='./images/moon.png' alt='toggle dark  mode' style='width: 10px;'/>
       <img id='sun' src='./images/sun.png' alt='toggle light mode' style='width: 10px; display: none;'/>

@@ -20,8 +20,10 @@ footer #footerInfoWrapper{
 
 footer #footerInfoWrapper div {
    background-color: var(--lilla);
-   padding: 8px;
+   padding: 4px;
    border-radius: 12px;
+   margin: 6px;
+   text-align: center;
 }
 #last{
    text-align: center;

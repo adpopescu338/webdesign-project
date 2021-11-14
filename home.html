@@ -42,6 +42,15 @@
 			#envImpactImage {
 				max-width: 100%;
 			}
+
+         main :last-child{
+            overflow: visible;
+            word-wrap: break-word;
+         }
+
+         ul{
+            list-style: none;
+         }
 		</style>
 	</head>
 	<body>
@@ -188,7 +197,7 @@
 						over the market.
 					</p>
 					<h3 id="letspowertheemobilitymovementtogether">Let’s power the e-mobility movement together!</h3>
-					<ol>
+					<ul>
 						<li><a target="_blank" href="https://insideevs.com/electric-car-lessons-norway/">InsideEVs</a></li>
 						<li>
 							<a target="_blank" href="https://jalopnik.com/heres-how-much-the-tesla-model-3-performance-saves-in-f-1832956649"
@@ -202,7 +211,7 @@
 								>Oilprice</a
 							>
 						</li>
-					</ol>
+					</ul>
 				</div>
 			</article>
 
@@ -350,6 +359,7 @@
 				li.innerHTML = `<a href='javascript:void(0)'>${h2.textContent}</a><ul></ul>`;
 				ul.appendChild(li);
 				li.addEventListener('click', () => h2.scrollIntoView({ behavior: 'smooth' }));
+            li.style = 'font-weight: bolder; font-size:larger'
 			});
 
 			Array.from(document.querySelectorAll('main h3')).forEach((item, index) => {
@@ -364,6 +374,7 @@
 				document.querySelector(`#${ulId} ul`).appendChild(li);
 
 				li.addEventListener('click', (e) => {e.stopPropagation(); item.scrollIntoView({ behavior: 'smooth' })}, false);
+                        li.style = 'font-weight: normal; font-size:medium'
 			});
 		})();
 

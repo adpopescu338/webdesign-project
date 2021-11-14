@@ -1,105 +1,99 @@
 @import 'nav.css';
 @import 'footer.css';
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
-:root{
-   --lilla: rgb(234, 234, 247);
-   --white: white;
-   --grey: grey;
-   --blaxkForBoxShadow: black;
-   --blue: blue;
+:root {
+	--lilla: rgb(234, 234, 247);
+	--white: white;
+	--grey: grey;
+	--blaxkForBoxShadow: black;
+	--blue: blue;
 }
-*{
-   margin: 0;
-   overflow-x: hidden;
-   color: var(--blaxkForBoxShadow);
+* {
+	margin: 0;
+	overflow-x: hidden;
+	color: var(--blaxkForBoxShadow);
 }
-body{
-   background-color: var(--lilla);
-}
-
-main{
-   margin-left: 10vw;
-   margin-right: 10vw;
-  background-color: var(--white);
-   border-radius: 7px;
-   padding: 3vw;
-   box-shadow: 0 0 8px var(--grey);
-}
-main *{
-   max-width: 80vw;
-   overflow: hidden;
+body {
+	background-color: var(--lilla);
 }
 
-#title{
-   text-align: center;
-   margin-bottom: 35px;
+main {
+	margin-left: 10vw;
+	margin-right: 10vw;
+	background-color: var(--white);
+	border-radius: 7px;
+	padding: 3vw;
+	box-shadow: 0 0 8px var(--grey);
 }
-li{
-   overflow: hidden;
+main * {
+	overflow: hidden;
 }
 
-ul{
-   overflow: hidden;
+#title {
+	text-align: center;
+	margin-bottom: 35px;
+}
+li {
+	overflow: hidden;
 }
 
-article{
-   margin-bottom: 30px;
-   margin-top: 8px;
-   font-size: larger;
-   text-align: justify;
+ul {
+	overflow: hidden;
+}
+
+article {
+	margin-bottom: 30px;
+	margin-top: 8px;
+	font-size: larger;
+	text-align: justify;
 }
 
 @media only screen and (max-width: 800px) {
-main{
-   margin-left: 7vw;
-   margin-right: 7vw;
-}
+	main {
+		margin-left: 7vw;
+		margin-right: 7vw;
+	}
 }
 
 @media only screen and (max-width: 500px) {
-main{
-   margin-left: 4vw;
-   margin-right: 4vw;
-}
+	main {
+		margin-left: 4vw;
+		margin-right: 4vw;
+	}
 }
 
 @media only screen and (max-width: 375px) {
-main{
-   margin-left: 2vw;
-   margin-right: 2vw;
-}
-}
-
-
-
-
-
-button:hover{
-   border: 5px solid red;
-}
-button:active{
-   border: 5px solid red;
-}
-a:focus{
-   border: 1px dotted var(--blaxkForBoxShadow);
-     background-color: var(--lilla);
-
-}
-a:hover{
-   background-color: var(--grey);
-}
-a{
-   text-decoration: none;
-   border-radius: 7px;
-   color: var(--blue);
-   overflow: hidden;
-   padding: 5px;
+	main {
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
 }
 
-            main a:hover{
-         background-color: var(--lilla);
-      }
+button:hover {
+	border: 5px solid red;
+}
+button:active {
+	border: 5px solid red;
+}
+a:focus {
+	border: 1px dotted var(--blaxkForBoxShadow);
+	background-color: var(--lilla);
+}
+a:hover {
+	background-color: var(--grey);
+}
+a {
+	text-decoration: none;
+	border-radius: 7px;
+	color: var(--blue);
+	overflow: hidden;
+	padding: 5px;
+}
 
-      .creditLinks{
-         margin-left: 8px;
-      }
+main a:hover {
+	background-color: var(--lilla);
+}
+
+.creditLinks {
+	margin-left: 8px;
+}

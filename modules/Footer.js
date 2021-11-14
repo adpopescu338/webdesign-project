@@ -21,7 +21,6 @@ export const Footer = {
             </div>
 				<div>
 					<h4 id="contactUs">Contact us</h4>
-               <br>
 					<address aria-labelledby="contactUs">
 						<a href="mailto:info@EV.com">info@EV.com</a> <br />
 						<a href="tel:+4733378901">+47 333 78 901</a><br />
